@@ -74,8 +74,8 @@ const headingText = `${taskList.length} ${tasksNoun} remaining`
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
-      <Form addTask={addTask} />
-      <div className="filters btn-group stack-exception">
+      <Form addTask={addTask} data-testId="addTaskForm"/>
+      <div className="filters btn-group stack-exception" data-testId="filterTasks">
       {filterList}
       </div>
       <h2 id="list-heading">{headingText}</h2>
@@ -83,6 +83,7 @@ const headingText = `${taskList.length} ${tasksNoun} remaining`
         role="list"
         className="todo-list stack-large stack-exception"
         aria-labelledby="list-heading"
+        data-testId="displayTasks"
       >
         {taskList}
       </ul>
